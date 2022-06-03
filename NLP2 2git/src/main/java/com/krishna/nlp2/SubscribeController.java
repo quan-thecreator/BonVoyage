@@ -1,9 +1,6 @@
 package com.krishna.nlp2;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
@@ -15,10 +12,10 @@ import com.twilio.type.PhoneNumber;
 public class SubscribeController {
 
     @GetMapping(path = "/", produces = "application/json")
-    public String subscribe(){
+    public String subscribe(@RequestParam(value = "toPhone", defaultValue = "+16479900182") String to ){
         Twilio.init(Nlp2Application.ACCOUNT_SID, Nlp2Application.AUTH_TOKEN);
         Message message = Message.creator(
-                new PhoneNumber("+16479900182"),
+                new PhoneNumber(to),
                 new PhoneNumber("+16479900182"),
                 "Test message (not supposed to work)")
                 .create();
