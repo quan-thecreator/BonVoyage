@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
 import java.net.URLEncoder;
-
+import com.google.gson.Gson;
 
 @RestController
 
@@ -21,18 +21,18 @@ public Links getLinks(@RequestParam(value = "topic", defaultValue = "mars") Stri
 
         URL url = new URL(google + URLEncoder.encode(topic, charset));
         Reader reader = new InputStreamReader(url.openStream(), charset);
-       // GoogleResults results = new Gson().fromJson(reader, GoogleResults.class);
-        GoogleResults results;
+        GoogleResults results = new Gson().fromJson(reader, GoogleResults.class);
+        // GoogleResults results;
         // Show title and URL of 1st result.
         String[] urls = new String[3];
         String[] titles = new String[3];
 
-      /*  for(int i=0; i<3; i++) {
+        for(int i=0; i<3; i++) {
             urls[i] = (results.getResponseData().getResults().get(i).getTitle());
             titles[i]  =  (results.getResponseData().getResults().get(i).getUrl());
         }
 
-       */
+
         return new Links(urls, titles);
 
 
