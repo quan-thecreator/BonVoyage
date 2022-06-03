@@ -10,6 +10,5 @@ public class Videos {
     public Videos(String[] _links){
         this.links=_links;
 
-
     }
 }
