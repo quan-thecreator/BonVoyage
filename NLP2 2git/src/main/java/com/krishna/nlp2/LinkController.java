@@ -14,7 +14,7 @@ import com.google.gson.Gson;
 
 public class LinkController {
 
-    @GetMapping(path = "/", produces = "application/json")
+    @GetMapping(path = "/link", produces = "application/json")
 public Links getLinks(@RequestParam(value = "topic", defaultValue = "mars") String topic) throws IOException {
         String google = "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=";
 
@@ -35,8 +35,6 @@ public Links getLinks(@RequestParam(value = "topic", defaultValue = "mars") Stri
 
 
         return new Links(urls, titles);
-
-
 
     }
 }
