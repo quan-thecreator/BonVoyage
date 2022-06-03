@@ -8,10 +8,10 @@ import com.twilio.type.PhoneNumber;
 
 
 @RestController
-@RequestMapping(path = "/subscribe", method = RequestMethod.GET)
+
 public class SubscribeController {
 
-    @GetMapping(path = "/", produces = "application/json")
+    @GetMapping(path = "/subscribe", produces = "application/json")
 
     public String subscribe(@RequestParam(value = "toPhone", defaultValue = "+16479900182") String to ){
         Twilio.init(Nlp2Application.ACCOUNT_SID, Nlp2Application.AUTH_TOKEN);

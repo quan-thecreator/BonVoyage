@@ -18,7 +18,7 @@ public class NLPUtils {
     private static Properties props = new Properties();
     private static StanfordCoreNLP pipeline;
     public static void init() {
-        props.setProperty("annotators","tokenize, sentiment, tokenize, pos, parse");
+        props.setProperty("annotators","tokenize,ssplit,pos,parse");
         props.setProperty("coref.algorithm", "neural");
          pipeline = new StanfordCoreNLP(props);
     }
