@@ -14,7 +14,7 @@ public class Nlp2Application {
     public static void main(String[] args) throws IOException {
         Properties sysProps = new Properties();
         sysProps.load(getResourceAsStream("cred.properties"));
-        System.out.println(sysProps.getProperty("youtube.api.key"));
+        println(sysProps.getProperty("youtube.api.key"));
         SpringApplication.run(Nlp2Application.class, args);
 
     }
