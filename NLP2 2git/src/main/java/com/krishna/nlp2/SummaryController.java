@@ -10,8 +10,9 @@ public class SummaryController {
     public Summary hello(@RequestParam(name = "topic", defaultValue = "mars")String topic){
     Jwiki jwiki = new Jwiki(topic);
     String text = jwiki.getExtractText();
-    NLPUtils.getTextOverallSentiment(text);
-return null;
+   String summaryNlpData = NLPUtils.getTextOverallSentiment(text);
+
+return new Summary("https://en.wikipedia.org/wiki/",text,summaryNlpData);
 }
 
 }
