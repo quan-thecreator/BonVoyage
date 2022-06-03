@@ -1,15 +1,14 @@
 package com.krishna.nlp2;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import Jwiki.Jwiki;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 
 public class SummaryController {
 @GetMapping("/")
-    public Summary hello(){
+    public Summary hello(@RequestParam(name = "topic", defaultValue = "mars")String topic){
+    Jwiki jwiki = new Jwiki(topic);
 
 return null;
 }

@@ -10,7 +10,7 @@ import java.net.URLEncoder;
 
 
 @RestController
-@RequestMapping(path = "/link")
+
 public class LinkController {
 
     @GetMapping(path = "/", produces = "application/json")
