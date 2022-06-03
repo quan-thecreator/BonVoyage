@@ -58,7 +58,11 @@
             <artifactId>jsoup</artifactId>
             <version>1.10.3</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+            <version>1.32.1</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -69,18 +73,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>com.google.api-client</groupId>
-                <artifactId>google-api-client</artifactId>
-                <version>1.32.1</version>
-            </dependency>
-            <!--  Gson: Java to Json conversion -->
-            <dependency>
-                <groupId>com.google.code.gson</groupId>
-                <artifactId>gson</artifactId>
-                <version>2.9.0</version>
-                <scope>compile</scope>
-            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
