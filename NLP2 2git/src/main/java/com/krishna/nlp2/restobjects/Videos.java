@@ -7,8 +7,9 @@ public class Videos {
         return links;
     }
 
-    public Videos(String... _links){
+    public Videos(String[] _links){
         this.links=_links;
+
 
     }
 }
