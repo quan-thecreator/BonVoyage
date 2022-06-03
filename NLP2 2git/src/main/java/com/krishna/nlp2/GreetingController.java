@@ -1,5 +1,6 @@
 package com.krishna.nlp2;
 
+import com.krishna.nlp2.restobject.Greeting;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package com.krishna.nlp2;
+package com.krishna.nlp2.restobject;
 
 public class Videos {
     private final String[] links;
