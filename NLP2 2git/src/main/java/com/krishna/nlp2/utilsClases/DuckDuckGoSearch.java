@@ -1,4 +1,4 @@
-package com.krishna.nlp2;
+package com.krishna.nlp2.utilsClases;
 
 import org.jsoup.Jsoup;
 

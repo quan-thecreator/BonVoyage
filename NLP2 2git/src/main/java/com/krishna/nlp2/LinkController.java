@@ -1,6 +1,7 @@
 package com.krishna.nlp2;
 
 import com.krishna.nlp2.restobject.Links;
+import com.krishna.nlp2.utilsClases.GoogleResults;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;

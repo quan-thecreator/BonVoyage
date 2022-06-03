@@ -1,4 +1,4 @@
-package com.krishna.nlp2;
+package com.krishna.nlp2.utilsClases;
 
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.neural.rnn.RNNCoreAnnotations;
@@ -18,7 +18,7 @@ public class NLPUtils {
     private static Properties props = new Properties();
     private static StanfordCoreNLP pipeline;
     public static void init() {
-        props.setProperty("annotators","tokenize, ssplit, sentiment");
+        props.setProperty("annotators","tokenize, sentiment, tokenize, pos, parse");
         props.setProperty("coref.algorithm", "neural");
          pipeline = new StanfordCoreNLP(props);
     }

@@ -1,21 +1,22 @@
-package com.krishna.nlp2;
+package com.krishna.nlp2.utilsClases;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GoogleResults {
 
-    private ResponseData responseData;
+    public ResponseData responseData = new ResponseData();
     public ResponseData getResponseData() { return responseData; }
     public void setResponseData(ResponseData responseData) { this.responseData = responseData; }
     public String toString() { return "ResponseData[" + responseData + "]"; }
 
-    static class ResponseData {
-        private List<Result> results;
+    public static class ResponseData {
+        public List<Result> results = new ArrayList<>();
         public List<Result> getResults() { return results; }
         public void setResults(List<Result> results) { this.results = results; }
         public String toString() { return "Results[" + results + "]"; }
     }
 
-    static class Result {
+    public static class Result {
         private String url;
         private String title;
         public String getUrl() { return url; }
