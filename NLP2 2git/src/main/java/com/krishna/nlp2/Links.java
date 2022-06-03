@@ -1,11 +1,11 @@
-package com.krishna.nlp2.restobjects;
+package com.krishna.nlp2;
 
 public class Links {
     private final String[] links;
     private final String[] titles;
 
 
-    public Links(String[] _links, String[] _sentiment, String[] _titles){
+    public Links(String[] _links, String[] _titles){
         this.links =_links;
 
         this.titles = _titles;
