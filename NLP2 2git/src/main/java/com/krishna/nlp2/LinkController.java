@@ -10,6 +10,8 @@ public class LinkController {
     @GetMapping(path = "/", produces = "application/json")
 public Links getLinks(@RequestParam(value = "topic", defaultValue = "mars") String topic){
         DuckDuckGoSearch.DuckDuckGoSearchShell returnBody = DuckDuckGoSearch.getSearchResults(topic);
+        String[] links = returnBody.linkProspects;
+        String[] titles = returnBody.titles;;
 
 
 
