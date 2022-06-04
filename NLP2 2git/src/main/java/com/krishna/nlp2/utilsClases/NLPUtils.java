@@ -39,7 +39,7 @@ public class NLPUtils {
 
             SimpleMatrix sm = RNNCoreAnnotations.getPredictions(tree);
            double neutrality =  ((double)Math.round(sm.get(2) * 100d));
-           if(!(neutrality >=20d)) {
+           if(!(neutrality >=23d)) {
                sentimentType="failing";
                break;
            }

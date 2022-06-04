@@ -22,7 +22,7 @@ public class LinkController {
     private final static String DUCKDUCKGO_SEARCH_URL = "https://duckduckgo.com/html/?q=";
 
 
-    public static final String GOOGLE_SEARCH_URL = "https://www.google.com/search";
+
     @GetMapping(path = "/link", produces = "application/json")
 public Links getLinks(@RequestParam(value = "topic", defaultValue = "mars") String topic) throws IOException {
         String[] prospectiveLinks = new String[3];
