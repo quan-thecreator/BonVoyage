@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.*;
 public class SummaryController {
 @GetMapping("/summary")
     public Summary hello(@RequestParam(name = "topic", defaultValue = "mars")String topic){
-    Jwiki jwiki = new Jwiki(topic);
+    System.out.println("Query param: " + topic);
+    JWiki2 jwiki = new JWiki2(topic);
 
     String text = jwiki.getExtractText();
-    System.out.println(text);
+    System.out.println("JWiki text: " + text);
    String summaryNlpData = NLPUtils.getTextOverallSentiment(text);
 
 
