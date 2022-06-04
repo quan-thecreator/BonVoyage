@@ -1,22 +1,30 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
+import './assets/logo.png';
 
-export default function App() {
-  return (
-    <div className="container">
-      <div className="title">
-        <Link to='/'>
-          <span>Nominare</span>
-        </Link>
+class App extends React.Component {
+
+  handleSubmit = () => {
+    alert('done !!');
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <div className="title">
+          <Link to='/'>
+            <span>Nominare</span>
+          </Link>
+        </div>
+        <div className="search">
+          <form className="search-box" onSubmit={this.handleSubmit}>
+            <input type="text" className="search-input" placeholder="type something here!" />
+          </form>
+        </div>
       </div>
-      <div className="search">
-        <form className="search-box" onSubmit="return submit()">
-          <input type="text" className="search-input" placeholder="Learn something new :)" />
-        </form>
-      </div>
-    </div>
-  );
+    );
+  }
 }
-function submit() {
-  alert('done !!');
-}
+
+export default App;
