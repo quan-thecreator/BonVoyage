@@ -1,7 +1,7 @@
 package com.krishna.nlp2;
 
-import Jwiki.Jwiki;
 import com.krishna.nlp2.restobject.Summary;
+import com.krishna.nlp2.utilsClases.JWiki2;
 import com.krishna.nlp2.utilsClases.NLPUtils;
 import org.springframework.web.bind.annotation.*;
 

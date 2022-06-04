@@ -1,14 +1,15 @@
 package com.krishna.nlp2.restobject;
 
 public class Videos {
-    private final String[] links;
+    private final String[] names;
 
-    public String[] getLinks() {
-        return links;
+
+    public String[] getNames() {
+        return names;
     }
 
-    public Videos(String[] _links){
-        this.links=_links;
+    public Videos(String[] _names){
+        this.names=_names;
 
     }
 }

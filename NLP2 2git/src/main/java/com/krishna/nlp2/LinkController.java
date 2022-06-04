@@ -1,7 +1,11 @@
 package com.krishna.nlp2;
 
 import com.krishna.nlp2.restobject.Links;
-import com.krishna.nlp2.utilsClases.GoogleResults;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -9,33 +13,40 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
 import java.net.URLEncoder;
-import com.google.gson.Gson;
+
+
 
 @RestController
 
 public class LinkController {
+    private final static String DUCKDUCKGO_SEARCH_URL = "https://duckduckgo.com/html/?q=";
 
+
+    public static final String GOOGLE_SEARCH_URL = "https://www.google.com/search";
     @GetMapping(path = "/link", produces = "application/json")
 public Links getLinks(@RequestParam(value = "topic", defaultValue = "mars") String topic) throws IOException {
-        String google = "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=";
+        String[] prospectiveLinks = new String[3];
+        String[] prospectiveTitles = new String[3];
+        Document doc = null;
+        int iterator=0;
+        try {
+            doc = Jsoup.connect(DUCKDUCKGO_SEARCH_URL + topic).get();
+            Elements results = doc.getElementById("links").getElementsByClass("results_links");
 
-        String charset = "UTF-8";
+            for(Element result: results){
+                if (iterator==3) break;
+                Element title = result.getElementsByClass("links_main").first().getElementsByTag("a").first();
+                String linkHref = title.attr("href");
+                String linkText = title.text();
 
-        URL url = new URL(google + URLEncoder.encode(topic, charset));
-        Reader reader = new InputStreamReader(url.openStream(), charset);
-        GoogleResults results = new Gson().fromJson(reader, GoogleResults.class);
-        // GoogleResults results;
-        // Show title and URL of 1st result.
-        String[] urls = new String[3];
-        String[] titles = new String[3];
-
-        for(int i=0; i<3; i++) {
-            urls[i] = (results.getResponseData().getResults().get(i).getTitle());
-            titles[i]  =  (results.getResponseData().getResults().get(i).getUrl());
+                prospectiveLinks[iterator] =linkHref;
+                prospectiveTitles[iterator]=linkText;
+                iterator++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-
-        return new Links(urls, titles);
+        return new Links(prospectiveLinks, prospectiveTitles);
 
     }
 }

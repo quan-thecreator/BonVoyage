@@ -15,5 +15,7 @@ public class Links {
         return links;
     }
 
-
+    public String[] getTitles() {
+        return titles;
+    }
 }
