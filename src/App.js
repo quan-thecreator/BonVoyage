@@ -20,8 +20,8 @@ const App = () => {
   const [search, setSearch] = useState('');
 
   const handleSubmit = (e) => {
+    console.log(`Submitting query ${search}`)
     axios.get(`http://nominare.study:8080/summary?topic=${search}`, {
-      headers: {'Access-Control-Allow-Origin': '*'}
     })
       .then((res) => {
         console.log(res)
@@ -44,10 +44,10 @@ const App = () => {
 
           {/* Icon and Text */}
           <div>
-            {/* <Link to='/'> */}
+            <Link to='/'>
               <Logo class="w-12 md:w-24 lg:w-32 inline" />
               <img src={test} class="w-32 md:w-96 lg:w-200 inline" alt="Three apples with arrows pointing to them" />
-            {/* </Link> */}
+            </Link>
           </div>
 
           {/* Slogan */}
