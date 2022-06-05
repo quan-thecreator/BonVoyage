@@ -1,9 +1,10 @@
 import React from 'react';
+import ReactPlayer from 'react-player';
 import './Search.css';
 
 export default function Search () {
     return (
-        <div class=" flex space-betweem h-screen bg-cloud-blue p-2.5">
+        <div class="flex overflow-hidden overflow-y-auto space-betweem h-screen bg-cloud-blue p-2.5">
             <div class="mr-5 w-1/2">
                 <div id="summary" class="pb-5">
                     <div class="pb-2">
@@ -22,15 +23,37 @@ export default function Search () {
                         </span>
                     </div>
                 </div>
-                <div id="links">
+                <div id="links" class="pb-5">
                     <div class="pb-2">
                         <span class="text-2xl">Links</span>
+                    </div>
+                    <div class="border-2 rounded-md p-1 border-sea-blue">
+                        <li class="list-none underline">
+                            <ul><a href="https://www.merriam-webster.com/dictionary/sea">Sea Definition & Meaning - Merriam-Webster</a></ul>
+                            <ul><a href="https://www.sea.com/">Sea</a></ul>
+                            <ul><a href="https://www.nationalgeographic.org/encyclopedia/sea/">Sea | National Geographic Society</a></ul>
+                        </li>
+                    </div>
+                </div>
+                <div id="research">
+                    <div class="pb-2">
+                        <span class="text-2xl">Research Papers</span>
+                    </div>
+                    <div class="border-2 rounded-md p-1 border-sea-blue">
+                        <li class="list-none underline">
+                            <ul><a href="http://www.accountingsolutions.com.au/CAS/2013_Mediterranean_files/Pages186-192.pdf">The Mediterranean</a></ul>
+                            <ul><a href="https://www.nature.com/articles/nature04070">Determinants of woody cover in African savannas</a></ul>
+                        </li>
                     </div>
                 </div>
             </div>
             <div id="videos" class="w-1/2">
                 <div class="pb-2">
                     <span class="text-2xl">Videos</span>
+                </div>
+                <div>
+                    <ReactPlayer url="https://www.youtube.com/watch?v=G52dUQLxPzg" />
+                    <ReactPlayer url="https://www.youtube.com/watch?v=6nCsGkbT8Es" />
                 </div>
             </div>
         </div>
