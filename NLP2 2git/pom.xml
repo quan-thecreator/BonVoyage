@@ -59,7 +59,7 @@
         <dependency>
             <groupId>edu.stanford.nlp</groupId>
             <artifactId>stanford-corenlp</artifactId>
-            <version>4.4.0</version>
+            <version>4.5.2</version>
         </dependency>
         <dependency>
             <groupId>com.twilio.sdk</groupId>
@@ -85,7 +85,7 @@
         <dependency>
             <groupId>edu.stanford.nlp</groupId>
             <artifactId>stanford-corenlp</artifactId>
-            <version>4.4.0</version>
+            <version>4.5.2</version>
             <classifier>models</classifier>
         </dependency>
     </dependencies>
